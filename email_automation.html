@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio de Desenvolvimento - Dani Guimarães</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/projetos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <a href="index.html#projetos" class="btn"><i class="fas fa-arrow-left"></i>Voltar </i></a>
+        <section class="projeto" id="automacao">
+            <div class="cabecalho">
+                <h1>Python Email Automation</h1> 
+            </div>
+            <div class="tecnologias">
+                <div class="tag backend">Backend/CLI</div>
+                <div class="tag python">Python</div>
+                <div class="tag api">SMTP (smtplib)</div>
+                <div class="tag autocao">Variáveis de Ambiente (.env)</div>  
+            </div>
+            <div class="projeto-info">
+                <div class="descricao">
+                    <h3>Visão Geral</h3>
+                    <p>
+                        Desenvolvimento de um script Python robusto para automação de <strong>envio de e-mails em massa</strong>, conectando-se ao servidor <strong>SMTP do Gmail</strong>. O projeto foca em <strong>segurança</strong> (uso de variáveis de ambiente), <strong>usabilidade</strong> (menu interativo via CLI) e <strong>tratamento de erros</strong>.
+                    </p>
+                    <p>
+                        <strong>Principais Aprendizados:</strong> Refatoração de código para garantir a persistência da conexão SMTP, solução de erros de múltiplos cabeçalhos 'To', e aprimoramento da experiência do usuário com inputs dinâmicos de Assunto e Corpo do Email. Este projeto fez parte da <strong>Imersão Python da Escola Hashtag</strong>.
+                    </p>
+                </div>
+                <div class="sidebar">
+                    <h3>Links & Recursos</h3>
+                    <div class="recurso-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/Daniela-guimaraes/python-email-automation.git" target="_blank" class="link-github">Ver Repositório no GitHub</a>
+                    </div>
+                    <div class="recurso-item">
+                        <i class="fas fa-video"></i>
+                        <a href="#carrocel" target="_blank" class="link-demo">Demonstração</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#carrocel" class="btn">Galeria <i class="fas fa-arrow-down"></i></a>
+        </section>
+        <section id="carrocel">
+            <div class="hero-content-wrapper">
+                <div class="hero-title-home" > 
+                    <a href="#automacao" class="btn"><i class="fas fa-arrow-up"></i>Topo</i></a>
+                    <h6>Galeria</h6> 
+                </div> 
+                <div class="carousel-container">
+                    <div class="carousel-slide-wrapper">
+                        <div class="carousel-item active">
+                            <img src="assets/automacao/automacao1.png" alt="print do trecho de cógigo mostrando a conexão SMTP" class="slide-img">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Back-end: Conexão SMTP e Anexos	</h3>
+                                    <p>Trecho do código Python que lida com o back-end da aplicação. Destaca a conexão segura ao servidor SMTP (smtplib) e a lógica de múltiplas partes (MIMEBase e encoders.encode_base64) para o envio correto de anexos em PDF/arquivos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="assets/automacao/automacao2.png" alt="print do terminal que mostra o menu inicial" class="slide-img">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Interface de Menu Interativa (CLI)	</h3>
+                                    <p>Interface de Linha de Comando (CLI) que oferece ao usuário um menu interativo com seis opções principais. Permite gerenciar destinatários e iniciar o processo de envio de e-mail de forma organizada e simples.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <img src="assets/automacao/automacao3.png" alt="print mostrando fluxo de execução após seleção opção 1" class="slide-img"> 
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Processo de Envio e Confirmação	</h3>
+                                    <p>Demonstração do fluxo de execução do script. Após a seleção da opção '1. Enviar email', o sistema solicita o assunto e o corpo da mensagem, processa e confirma o envio bem-sucedido para o destinatário cadastrado.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <img src="assets/automacao/automacao4.jpg" alt="prova de conceito: print email recebido no Gmail" class="slide-img"> 
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Validação Final: E-mail Recebido    </h3>
+                                    <p>Prova de conceito e resultado final da automação. Confirmação do e-mail recebido no Gmail, validando que o assunto e o corpo da mensagem foram entregues corretamente, juntamente com o anexo PDF, finalizando o ciclo da automação.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="prev-btn">❮</button>
+                    <button class="next-btn">❯</button>
+
+                    <div class="carousel-dots"></div>
+                </div> 
+            </div>
+        </section>
+        <a href="index.html#projetos" class="voltar-link">← Todos os Projetos</a>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Daniela Guimarães. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/carrocel.js"></script>
+</body>
+</html>

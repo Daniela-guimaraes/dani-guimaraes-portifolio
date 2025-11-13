@@ -1,0 +1,406 @@
+/* Geral */
+html {
+    height: 100%; 
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    box-sizing: border-box;
+    background-color: white; /* Fundo claro e suave */
+    color: #333;
+    line-height: 1.6;
+    min-height: 100%;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db; /* Azul padrão para links */
+}
+
+/* --- Cabeçalho Fino com Linha Divisória --- */
+
+.top-nav {
+    background-color: #ffffff; /* CORREÇÃO: Fundo BRANCO (como desejado) */
+    width: 100%;
+    /* Mantém a linha divisória AZUL na parte inferior */
+    border-bottom: 1px solid #3498db; 
+    height: 40px;
+}
+
+.top-nav a {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2c3e50;
+    padding-left: 40px;
+    line-height: 1.2;
+}
+
+/* --- Página Inicial - Primeira seção --- */
+
+.pagina-inicial {
+    background-color: #ffffff; 
+    padding: 0; /* Mais padding no topo e rodapé */
+}
+
+/* Estrutura das Colunas (Foto vs. Info) */
+.perfil-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    gap: 60px; /* Reduzi o gap para caber as 3 colunas */
+}
+/* NOVO: Estilo para a Coluna da Esquerda (Foto e Título) */
+.foto-dados-titulo {
+    flex: 1; /* Ocupa 1/3 do espaço */
+    min-width: 250px;
+    text-align: center; /* Centraliza o nome, título e foto */
+    margin-top: 15px;
+}
+
+.foto-dados-titulo .nome-sob-foto {
+    font-size: 1.5em;
+    color: #2c3e50;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.foto-dados-titulo h2 {
+    font-size: 1.2em;
+    color: #3498db;
+    margin-bottom: 25px;
+}
+.foto-perfil-area {
+    max-width: 250px;
+    margin: 0 auto; /* Centraliza o container da foto */
+}
+
+.foto-perfil {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #3498db; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.info-pessoal {
+    flex: 4; 
+    text-align: left;
+    margin-top: 0; 
+    padding-top: 0;
+}
+
+
+
+.info-pessoal h2 {
+    font-size: 1.5em;
+    color: #3498db;
+    margin-top: 0;
+}
+
+.stack{
+    line-height: 1.2;
+    background-color: #c5e5fa;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+/* Estilos de Contato e Formação */
+
+.dados-contato {
+    padding-bottom: 40px;
+    margin-top: 30px;
+}
+
+.dados-contato p {
+    margin: 11px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.dados-contato i {
+    margin-right: 10px;
+    color: #2c3e50;
+    width: 20px;
+    text-align: center;
+}
+
+.formacao-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.formacao-lista li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.formacao {
+    flex:1.9; /* Ocupa 1.5 do espaço */
+    text-align: left;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Página Inicial - Segunda seção (projetos) */
+
+.projetos-section {
+    background-color:  #c5e5fa;
+    padding: 10px 20px;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;  
+}
+
+.projetos-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 100px;
+}
+
+/* Estilos para o novo contêiner dos cards */
+.cards-container {
+    /* Cor de Fundo Branca Solicitada */
+    background-color: #ffffff; 
+    
+    /* Espaçamento interno para que o grid não fique colado nas bordas */
+    padding: 30px; 
+    
+    /* Adiciona cantos arredondados sutis para um visual moderno */
+    border-radius: 10px; 
+    
+    /* Centraliza o bloco na página (opcional, dependendo do design da seção) */
+    margin: 0 auto; 
+    
+    /* Garante que o container não seja muito largo, ajustando-se ao conteúdo */
+    max-width: 1200px; 
+    
+    /* Adiciona uma sombra suave para destacar o bloco branco do fundo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 200px de largura mínima */
+    gap: 100px; /* Espaçamento entre as caixinhas */
+    margin-bottom: 0px;
+    margin: 30px 100px;
+}
+
+.projeto-card {
+    background-color: #1C3F71;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para empurrar o botão para baixo */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.projeto-card h3{
+    color: white;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.projeto-card h3 {
+    font-size: 1.2em;
+    margin-top: 0;
+    min-height: 50px; /* Garante que o título não "salte" */
+}
+
+/* LINK VOLTAR */
+.voltar-link {
+    display: table;
+    margin: 5px auto 0 auto;
+    padding: 12px 25px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    font-size: 1.1em;
+}
+
+.voltar-link:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.btn-saiba-mais {
+    display: inline-flex; /* Permite alinhar o texto e o ícone */
+    align-items: center;
+    background-color: #3498db; /* Azul */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px; /* Espaçamento para o botão */
+    font-size: 0.9em;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #2980b9;
+}
+
+.btn-saiba-mais i {
+    margin-left: 8px;
+}
+
+/* 'See All' */
+.ver-todos-projetos {
+    margin-top: 60px;
+}
+
+.btn-see-all {
+    color: #2c3e50;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.btn-see-all:hover {
+    color: #3498db;
+}
+
+.arrow-down {
+    font-size: 2.5em;
+    display: block; /* Para que a seta fique acima do texto */
+    margin-bottom: 5px;
+    color: #2c3e50;
+    transition: transform 0.3s ease;
+}
+
+.btn-see-all:hover .arrow-down {
+    transform: translateY(5px); /* Efeito de "saltar" */
+    color: #3498db;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.9em;
+}
+
+
+.cursos-section {
+    background-color: #e0e6e9;
+    padding: 60px 50px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsividade 1: CELULARES PEQUENOS (Máx. 468px de largura) */
+@media (max-width: 468px) {
+    /* --- Seção de Perfil (Header) --- */
+    .perfil-container {
+        flex-direction: column; 
+        align-items: center;
+        padding: 0 10px; 
+    }
+    
+    .foto-dados-titulo {
+        min-width: 100%;
+        margin-bottom: 15px;
+        order: -1; 
+    }
+    
+    .foto-perfil-area {
+        max-width: 150px; 
+    }
+    
+    /* Alinha texto das info-pessoal e formacao para telas pequenas */
+    .info-pessoal, .formacao {
+        width: 100%;
+        padding: 10px; 
+    }
+
+    .info-pessoal {
+        margin-top: 15px;
+        border-bottom: 1px solid #ccc; 
+    }
+    
+    .stack {
+        font-size: 0.85em;
+    }
+    
+    /* --- Seção de Projetos --- */
+    .projetos-section {
+        padding: 10px;
+    }
+    
+    .cards-container {
+        padding: 15px; 
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr; /* Coluna única */
+        gap: 15px;
+        margin: 0;
+    }
+}
+
+/* Responsividade 2: TABLETS E CELULARES GRANDES (Máx. 768px de largura) */
+/* As regras aqui substituirão o bloco de 468px apenas se a tela for maior que 468px */
+@media (max-width: 768px) {
+    /* --- Seção de Perfil (Header) --- */
+    .perfil-container {
+        flex-direction: column; 
+        align-items: center;
+        padding: 0 20px;
+        gap: 20px;
+    }
+    
+    .foto-dados-titulo {
+        min-width: 100%;
+        margin-bottom: 20px;
+        order: -1; 
+    }
+    
+    .foto-perfil-area {
+        max-width: 200px; /* Foto um pouco maior no tablet */
+    }
+
+    /* Permite 100% da largura com padding interno para que o conteúdo não cole */
+    .info-pessoal, .formacao {
+        width: 100%;
+        padding: 20px; 
+        box-sizing: border-box; 
+    }
+    
+    /* --- Seção de Projetos --- */
+    .projetos-grid {
+        /* Permite duas colunas em tablets, se couberem */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        gap: 30px;
+        margin: 10px 0;
+    }
+}

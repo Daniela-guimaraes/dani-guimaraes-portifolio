@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio de Desenvolvimento - Dani Web Solutions (Site de Serviços)</title> 
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/projetos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <a href="index.html#projetos" class="btn"><i class="fas fa-arrow-left"></i>Voltar </i></a>
+        <section class="projeto"  id="website">
+            <div class="cabecalho">
+                <h1>Dani Web Solutions - Site de Serviços</h1> 
+            </div>
+            <div class="tecnologias">
+                <div class="tag frontend">Frontend (SPA)</div>
+                <div class="tag javascript">JavaScript Puro</div>
+                <div class="tag api">GA4 & Métricas</div>
+                <div class="tag autocao">Formspree (Envio)</div>  
+            </div>
+            <div class="projeto-info">
+                <div class="descricao">
+                    <h3>Desafio e Solução de Negócio</h3>
+                    <p>
+                        Este projeto é o site oficial da <strong>Dani Web Solutions</strong>, projetado para ser uma ferramenta de vendas de serviços de desenvolvimento. O principal desafio foi construir uma plataforma com <strong>alta performance e fluidez</strong>, capaz de <strong>rastrear com precisão</strong> o comportamento do cliente para otimização de funil de vendas.
+                    </p>
+                    <p>
+                        A solução foi arquitetada como um <strong>Single Page Application (SPA)</strong> do zero, utilizando <strong>JavaScript puro</strong> para máxima leveza e controle. Isso eliminou a lentidão de recarregamento e permitiu a implementação de um <strong>mecanismo avançado de coleta de dados</strong>.
+                    </p>
+                    <p><strong>Destaques Técnicos e Habilidades Chave:</strong></p>
+                    <ul>
+                        <li><strong>Performance & Arquitetura:</strong> Desenvolvimento de um <strong>Roteador SPA Customizado</strong> (função <code>loadPageContent</code>) para carregar dinamicamente o HTML das rotas, garantindo <strong>transições instantâneas</strong>.</li>
+                        <li><strong>Métricas de Conversão (GA4):</strong> Implementação completa do <strong>Google Analytics 4</strong> para rastrear <strong>page_view</strong> por rota e eventos críticos para o negócio.</li>
+                        <li><strong>Rastreamento de Funil:</strong> Criação de um sistema de captura de <strong>Abandono de Formulário</strong>, disparado condicionalmente após o preenchimento de 2 ou mais campos (ex: Email), usando <strong>blur</strong> e lógica de contagem.</li>
+                        <li><strong>Sincronização Avançada:</strong> Desenvolvimento de uma solução de <strong>setTimeout de segurança</strong> para resolver falhas de <strong>timing do SPA</strong>, garantindo que os <strong>listeners</strong> sejam anexados somente após a total renderização do DOM e a inicialização do <strong>gtag</strong>.</li>
+                        <li><strong>Integração de Serviço Headless:</strong> Uso do <strong>Formspree</strong> para gerenciar o <strong>endpoint</strong> do formulário de contato. Essa decisão de arquitetura permitiu criar uma solução <strong>100% front-end</strong>, mantendo o foco do desenvolvimento no <strong>core do SPA</strong>e nas <strong>métricas GA4</strong>.</li>
+                    </ul>
+                </div>
+                <div class="sidebar">
+                    <h3>Links & Recursos</h3>
+                    <div class="recurso-item">
+                        <i class="fab fa-github"></i>
+                        <a href="" target="_blank" class="link-github">Não disponível.</a>
+                    </div>
+                    <div class="recurso-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://www.daniwebsolutions.com.br" target="_blank" class="link-demo">Ir para o site ativo</a>
+                    </div>
+                </div> 
+            </div>
+            <a href="#carrocel" class="btn">Galeria<i class="fas fa-arrow-down"></i></a>
+        </section>
+
+        <section id="carrocel">
+            <div class="hero-content-wrapper">
+                <div class="hero-title-home" > 
+                    <a href="#website" class="btn"><i class="fas fa-arrow-up"></i>Topo</i></a>
+                    <h6>Galeria</h6> 
+                </div> 
+                <div class="carousel-container">
+                    <div class="carousel-slide-wrapper">
+                        <div class="carousel-item active">
+                            <img src="assets/website/website1.png" alt="Print do código da função loadPageContent mostrando o roteamento SPA." class="slide-img">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Roteamento SPA Customizado</h3>
+                                    <p>Exemplo da função <code>loadPageContent</code> que gerencia o <strong>fetch</strong> e a <strong>injeção assíncrona</strong> do conteúdo das rotas (core do <strong>SPA</strong>), garantindo a navegação <strong>sem recarregamento</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/website/website2.png" alt="Trecho de código da função rastrearAbandonoPorBlur." class="slide-img">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Rastreamento de Abandono (Regra de 2 Campos)</h3>
+                                    <p>Implementação do <strong>listener blur</strong> no campo de Email, que utiliza a <strong>função de contagem de campos</strong> para disparar o <strong>evento GA4</strong> somente se a regra de 2 campos for atendida.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/website/website3.png" alt="Trecho de código JavaScript corrigindo o problema de timing do GA4." class="slide-img"> 
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Resolução de Sincronia (SPA Timing)</h3>
+                                    <p>Código que utiliza o <strong>setTimeout de segurança</strong> na inicialização, corrigindo o <strong>erro de timing do SPA</strong> e garantindo que todos os <strong>listeners</strong> sejam anexados ao DOM após a renderização.</p>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="carousel-item">
+                            <img src="assets/website/website4.png" alt="Trecho de código JavaScript corrigindo o problema de timing do GA4." class="slide-img"> 
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Arquitetura da Informação e UI/UX</h3>
+                                    <p>Demonstração da <strong>"Hero Section"</strong> e da estrutura de navegação do site. O foco foi em uma <strong>Arquitetura da Informação</strong> clara, 
+                                     aplicando princípios de **Design de Interface (UI)** para criar uma experiência de usuário (UX) intuitiva e de alto impacto. Elementos visuais e a 
+                                     <strong>Chamada para Ação (CTA)</strong> inicial foram estrategicamente pensados para guiar o recrutador e apresentar a proposta de valor do portfólio de forma 
+                                     imediata e profissional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="prev-btn">❮</button>
+                    <button class="next-btn">❯</button>
+
+                    <div class="carousel-dots"></div>
+                </div> 
+            </div>
+        </section>
+        <a href="index.html#projetos" class="voltar-link">← Todos os Projetos</a>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Daniela Guimarães. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/carrocel.js"></script>
+</body>
+</html>

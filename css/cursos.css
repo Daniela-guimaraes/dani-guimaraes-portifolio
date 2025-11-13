@@ -1,0 +1,239 @@
+/* PALETA DE CORES (Baseada no Print das Tags) */
+:root {
+    --cor-body: #F0F0F0;
+    --cor-beige-fundo: #EBE3D5; /* Borda externa do card */
+    --cor-texto-escuro: #444;
+
+    /* Cores do Flip Card (Caixa da Frente) */
+    --cor-cyan: #d6f2f9;    /* Azul/Ciano claro */
+    --cor-gray: #e6e9eb;    /* Cinza claro */
+    --cor-yellow: #fef4d8;  /* Amarelo claro */
+    --cor-pink: #f9e2e5;    /* Rosa claro */
+}
+
+/* ESTILOS GERAIS E RESET */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1C3F71;
+    color: var(--cor-texto-escuro);
+    margin: 0;
+    padding: 0;
+    perspective: 1000px; 
+}
+
+/* HEADER E TÍTULOS */
+#cursos-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 200px;
+    gap: 350px;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 3px solid #007bff;
+    text-align: center;
+}
+header h1 {
+    color: #007bff;
+    margin: 0;
+    font-size: 1.8em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.cursos-main {
+    /* Mantenho um MAX-WIDTH (1200px) e dou mais padding para evitar grudar nas bordas da tela */
+    max-width: 1200px; 
+    margin: 40px auto;
+    padding: 30px 25px; 
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.cursos-main h2 {
+    font-size: 2.2em;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* GRADE DE LAYOUT */
+.cursos-grid {
+    display: grid;
+    /* CHAVE: Força EXATAMENTE 4 colunas iguais, o que obriga o Grid a respeitar o espaço. */
+    grid-template-columns: repeat(4, 1fr); 
+    /* Aumenta o espaçamento (gap) para um espaço bem visível entre os cards */
+    gap: 30px; 
+    margin-bottom: 40px;
+}
+
+/* 1. CONTAINER BASE (FUNDO BEGE - BORDA) */
+.curso-card-container {
+    /* Removo o width: 100% que pode ter causado conflito, o grid já define a largura. */
+    height: 170px; 
+    border-radius: 15px;
+    background-color: var(--cor-beige-fundo); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    
+    position: relative;
+    perspective: 1000px;
+    padding: 20px; 
+}
+
+.curso-card-container:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* 2. CARD INTERNO (A PARTE QUE VIRA) */
+.curso-card {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+/* Efeito de virada (FLIP) */
+.curso-card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* FRENTE E VERSO (CONFIGURAÇÃO 3D) */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    
+    /* CENTRALIZAÇÃO VERTICAL: */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    
+    padding: 10px; 
+}
+
+/* CORES DAS FACES (Frente) */
+.flip-cyan .card-front { background-color: var(--cor-cyan); }
+.flip-gray .card-front { background-color: var(--cor-gray); }
+.flip-yellow .card-front { background-color: var(--cor-yellow); }
+.flip-pink .card-front { background-color: var(--cor-pink); }
+
+/* VERSO */
+.card-back {
+    background-color: white; 
+    transform: rotateY(180deg); 
+    
+    /* Verso também centralizado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    
+    padding: 10px; 
+}
+
+/* ESTILOS DE CONTEÚDO DA FRENTE */
+.curso-titulo {
+    font-weight: 700;
+    font-size: 1em; 
+    color: var(--cor-texto-escuro);
+    margin-bottom: 3px; 
+    line-height: 1.2;
+}
+
+.curso-descricao {
+    font-size: 0.8em; 
+    color: #666;
+    margin-bottom: 0; 
+}
+
+/* ÍCONE DE CLIQUE (SETA) */
+.clique-aviso {
+    /* POSICIONAMENTO ABSOLUTO NO RODAPÉ */
+    position: absolute; 
+    bottom: 10px; 
+    
+    font-size: 1.5em; 
+    font-weight: bold;
+    color: #007bff;
+    line-height: 1; 
+    transition: transform 0.2s;
+}
+/* Seta da Frente (direita) */
+.card-front .clique-aviso {
+    right: 10px; 
+}
+/* Seta de Retorno (esquerda) */
+.card-back .clique-aviso {
+    left: 10px;
+}
+
+.curso-card-container:hover .card-front .clique-aviso {
+    transform: translateX(3px); 
+}
+.curso-card-container:hover .card-back .clique-aviso {
+    transform: translateX(-3px); 
+}
+
+
+/* Estilos de CONTEÚDO DO VERSO (ajustados para centralização) */
+.card-back p {
+    margin: 5px auto; 
+    padding-left: 0;
+    border-left: none;
+    max-width: 90%; 
+}
+.card-back .detalhe-carga {
+    font-weight: 700;
+    font-size: 0.9em; 
+    color: #007bff;
+}
+.card-back .detalhe-info {
+    font-size: 0.8em; 
+    color: #666;
+}
+
+
+
+/* RESPONSIVIDADE (Ajustada para o layout de 4 colunas) */
+@media (max-width: 1050px) {
+    /* Em telas de tablet, caem para 3 colunas */
+    .cursos-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    /* Em telas menores, caem para 2 colunas */
+    .cursos-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+    .curso-card-container {
+        height: 140px; 
+        padding: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    /* Em celulares, apenas 1 coluna */
+    .cursos-grid {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+}

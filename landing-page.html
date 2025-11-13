@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio de Desenvolvimento - Dani Guimarães</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/projetos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <a href="index.html#projetos" class="btn"><i class="fas fa-arrow-left"></i>Voltar </i></a>
+        <section class="projeto" id="landingpage">
+            <div class="cabecalho">
+                <h1>Landing Page de Vendas</h1> 
+            </div>
+            <div class="tecnologias">
+                <div class="tag frontend">Front-end</div>
+                <div class="tag javascript">JavaScript</div>
+                <div class="tag api">HTML/CSS</div>
+                <div class="tag ux">UI/UX -Conversão Otimizada e Intuitiva</div>  
+            </div>
+            <div class="projeto-info">
+                <div class="descricao">
+                    <h3>Visão Geral e Desafio Técnico</h3>
+                    <p>Desenvolvimento de uma <strong>Landing Page de Alta Conversão</strong> focada na venda de um produto artesanal. O desafio foi criar uma experiência de compra dinâmica, utilizando lógica de programação para simular um fluxo de carrinho simples e aplicar técnicas de <strong>persuasão em vendas</strong> (gatilhos mentais).</p>
+                    
+                    <p>O foco técnico principal foi a <strong>manipulação do DOM</strong> via JavaScript para criar uma experiência de usuário fluida e reter o estado da compra.</p>
+                    
+                    <p><strong>Habilidades e Aprendizados Destacados:</strong></p>
+                    <ul>
+                        <li>Implementação de <strong>cálculo dinâmico</strong> em JavaScript para ajustar preço total com base na quantidade selecionada.</li>
+                        <li>Uso de <strong><code>localStorage</code></strong> para garantir a <strong>persistência da quantidade</strong> selecionada, melhorando a <strong>UX</strong> (User Experience).</li>
+                        <li>Configuração de <strong>gatilhos mentais</strong> (Contagem Regressiva, Escassez e Âncora de Preço) puramente via HTML, CSS e JavaScript.</li>
+                        <li><strong>Validação</strong> de *inputs* de usuário (quantidade mínima/máxima) diretamente no front-end.</li>
+                        <li>Controle e customização de elementos de formulário (`input type="number"`) via <strong>CSS Webkit</strong> para superar bugs de compatibilidade.</li>
+                    </ul>
+                </div>
+                <div class="sidebar">
+                    <h3>Links & Recursos</h3>
+                    <div class="recurso-item">
+                        <i class="fab fa-github"></i>
+                        <a href="" target="_blank" class="link-github">Sem Repositório no GitHub</a>
+                    </div>
+                    <div class="recurso-item">
+                        <i class="fas fa-video"></i>
+                        <a href="#carrocel" target="_blank" class="link-demo">Demonstração</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#carrocel" class="btn">Galeria <i class="fas fa-arrow-down"></i></a>
+        </section>
+       <section id="carrocel">
+            <div class="hero-content-wrapper">
+                <div class="hero-title-home" > 
+                    <a href="#landingpage" class="btn"><i class="fas fa-arrow-up"></i>Topo</i></a>
+                    <h6>Galeria</h6> 
+                </div> 
+                <div class="carousel-container"> 
+                    <div class="carousel-slide-wrapper">
+                        <div class="carousel-item active">
+                            <img src="assets/landing-page/landing-page1.png" alt="Código JavaScript do localStorage" class="slide-img">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Design Focado em Conversão e Escassez</h3>
+                                    <p>Implementação do `localStorage` para salvar a última quantidade selecionada pelo cliente. 
+                                       Isso garante que, ao voltar para a página, o estado anterior seja restaurado, eliminando a 
+                                       frustração do reset e otimizando o fluxo de compra (ótimo ponto de UX!).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/landing-page/landing-page2.png" alt="Código CSS para fixar as setas do input" class="slide-img">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Checkout Simplificado e Integrado ao PIX</h3>
+                                    <p>Tela final de checkout com foco na clareza e facilidade de pagamento. Implementação de fluxo de pagamento 
+                                       via PIX (QR Code e Copia e Cola), seguido de confirmação via WhatsApp para automatizar o processo e garantir 
+                                       a reserva do produto.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/landing-page/landing-page3.png" alt="modal para captura de leads com cupom de desconto" class="slide-img"> 
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Captura de Leads com Cupom Exclusivo</h3> 
+                                    <p>Seção de pop-up ou modal para captura de e-mails (leads), oferecendo um desconto atrativo para a primeira 
+                                       compra. Essencial para construir lista de clientes e remarketing. Foco: UX/UI simples e direto.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/landing-page/landing-page4.png" alt="Código JavaScript de cálculo de preço" class="slide-img"> 
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Manipulação da URL e Cálculo de Total (Front-end)</h3>
+                                    <p>Função JavaScript para ler dados da URL (total e qtd) utilizando URLSearchParams. O script carrega 
+                                       e formata o valor total do pedido, preparando o dado para ser exibido e configurando o link de confirmação
+                                       do pedido no WhatsApp.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="prev-btn">❮</button>
+                    <button class="next-btn">❯</button>
+
+                    <div class="carousel-dots"></div>
+                </div> 
+            </div>
+        </section>
+        <a href="index.html#projetos" class="voltar-link">← Todos os Projetos</a>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Daniela Guimarães. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/carrocel.js"></script>
+</body>
+</html>

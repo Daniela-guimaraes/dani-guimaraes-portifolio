@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio de Desenvolvimento - Dani Guimarães</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/projetos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <a href="index.html#projetos" class="btn"><i class="fas fa-arrow-left"></i>Voltar </i></a>
+        <section class="projeto" id="ecommerce-api">
+            <div class="cabecalho">
+                <h1>API RESTful</h1> 
+                <h2>E-commerce - Python/Flask na AWS</h2>
+            </div>
+            <div class="tecnologias">
+                <div class="tag backend">Backend API</div>
+                <div class="tag python">Python/Flask</div>
+                <div class="tag dataanalytics">AWS Elastic Beanstalk</div>
+                <div class="tag springboot" style="margin-left: 40px;">SQLite (Persistência)</div>  
+            </div>
+            <div class="projeto-info">
+                <div class="descricao">
+                    <h3>Visão Geral</h3>
+                    <p>Implementação e <strong>deploy robusto</strong> de uma API de E-commerce utilizando o framework Flask e persistência 
+                    de dados com SQLite. O foco principal deste projeto foi a <strong>entrega contínua (CI/CD)</strong> e a <strong>depuração de problemas 
+                    complexos de infraestrutura</strong> na AWS Elastic Beanstalk (EB).</p>
+                    <p>O projeto superou falhas críticas de inicialização do servidor (Gunicorn) e do banco de dados (SQLite), 
+                    garantindo que a aplicação fosse executada de forma estável em um ambiente de produção Linux (Amazon Linux 2023).</p>
+                    <p><strong>Principais Aprendizados e Habilidades:</strong> <ul>
+                            <li><strong>Resolução de Erros de Servidor (502 Bad Gateway):</strong> Configuração correta do `Procfile` e Gunicorn para atender ao Nginx na porta padrão do EB.</li>
+                            <li><strong>Depuração de Contexto de Aplicação (500 Internal Server Error):</strong> Solução do erro fatal de DB ausente, implementando a criação do banco de dados SQLite de forma <strong>automática e resiliente</strong> via *hook* `before_request` do Flask.</li>
+                            <li><strong>SSH e Isolamento de Ambiente:</strong> Utilização avançada de `eb ssh` e comandos Linux (`find`) para depurar problemas de `PATH` e ambiente virtual (`venv`) da AWS.</li>
+                    </ul>
+                </div>
+                 <div class="sidebar">
+                    <h3>Links & Recursos</h3>
+                    <div class="recurso-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/Daniela-guimaraes/api-ecommerce-aws-eb.git" target="_blank" class="link-github">Ver Repositório no GitHub</a>
+                    </div>
+                    <div class="recurso-item">
+                        <i class="fas fa-video"></i>
+                        <a href="http://ecommerce-api-v2.us-east-1.elasticbeanstalk.com" target="_blank" class="link-demo">Endpoint Público (AWS)</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#carrocel" class="btn">Galeria <i class="fas fa-arrow-down"></i></a>
+        </section>
+        <section id="carrocel">
+            
+            <div class="hero-content-wrapper">
+                <div class="hero-title-home" > 
+                    <a href="#ecommerce-api" class="btn"><i class="fas fa-arrow-up"></i>Topo</a>
+                    <h6>Galeria</h6> 
+                </div> 
+                <div class="carousel-container">
+                    
+                    <div class="carousel-slide-wrapper">
+
+                        <div class="carousel-item active">
+                            <img src="assets/ecommerce/ecommerce1.png" alt="Print do Postman mostrando Status 200 OK e 'User registered successfully'" class="slide-img">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>✅ Validação Final do Endpoint de Registro</h3>
+                                    <p>Resultado do teste POST no Postman, confirmando que a aplicação está totalmente funcional na AWS. O <strong>Status 200 OK</strong> e a mensagem de sucesso provam que o Gunicorn está ativo e o banco de dados (SQLite) foi criado e está persistindo dados corretamente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="assets/ecommerce/ecommerce2.png" alt="Print do Postman mostrando Status 500 INTERNAL SERVER ERROR" class="slide-img">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>⚠️ Depuração de Erro 500 Interno</h3>
+                                    <p>Este print documenta o erro crítico que indicava que o servidor estava rodando, mas a <strong>lógica da aplicação falhava</strong> internamente. A causa foi diagnosticada como a <strong>ausência do arquivo SQLite</strong> (`ecommerce.db`), que precisava ser criado no ambiente de produção.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <img src="assets/ecommerce/ecommerce3.png" alt="Print do console da AWS mostrando a integridade OK do ambiente" class="slide-img"> 
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Monitoramento de Integridade na AWS</h3>
+                                    <p>Visão geral no console do AWS Elastic Beanstalk (EB). O status <strong>Ok</strong> e a versão de plataforma <strong>Python 3.12</strong> confirmam que a aplicação foi implantada e está em estado saudável após a correção dos erros de Gunicorn e a implementação da criação automática do DB.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <img src="assets/ecommerce/ecommerce4.png" alt="Print do terminal SSH mostrando o erro 'flask: command not found'" class="slide-img"> 
+                            <div class="slide-content-wrapper">
+                                <div class="slide-description">
+                                    <h3>Depuração de Infraestrutura e venv da AWS</h3>
+                                    <p>Registro de um dos momentos de depuração via SSH. O erro <strong>flask: command not found</strong> e a 
+                                        subsequente falha de sintaxe de comandos Python complexos demonstram a necessidade de habilidades avançadas 
+                                        de <strong>troubleshooting</strong> em ambientes de produção Linux para contornar limitações do ambiente 
+                                        virtual (venv) da AWS.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="prev-btn">❮</button>
+                    <button class="next-btn">❯</button>
+
+                    <div class="carousel-dots"></div>
+                </div> 
+            </div>
+        </section>
+        <a href="index.html#projetos" class="voltar-link">← Todos os Projetos</a>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Daniela Guimarães. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/carrocel.js"></script>
+</body>
+</html>

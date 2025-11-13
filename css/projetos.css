@@ -1,0 +1,467 @@
+/* Estilos para a seção de detalhe de um projeto individual */
+
+body {
+     background-color: #1C3F71;
+}
+
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #444;
+  
+}
+
+main {
+    padding: 0 20px 40px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estrutura Principal do Projeto */
+.projeto {
+    background-color: white;
+    padding: 30px 30px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabeçalho do Projeto */
+.cabecalho {
+    line-height: 0.5;
+    padding-bottom: 40px;
+    margin-left: 150px;
+}
+
+.tecnologias {
+    display: flex;
+    margin-left: 40px;
+    padding: 0; 
+    line-height: 0.8;
+    width: 700px;
+}
+
+/* Estilo Geral da Tag de Tecnologia  */
+
+.tag {
+    margin-top: 0; 
+    margin-bottom: 5px;
+    padding: 5px; 
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 600; 
+    height: 20px;
+}
+
+
+/* Seção de Descrição e Sidebar/Certificado */
+.projeto-info {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+.descricao {
+    flex:3.5;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.sidebar {
+    margin-top: 70px;
+    flex: 1.5;
+    background-color: #f3f8fe;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: left;
+    height: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #1C3F7F;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 15px;  
+    /* CORREÇÃO: Centraliza o texto do título H3 */
+    text-align: center; 
+}
+
+.recurso-item {
+    display: flex;
+    align-items: center;
+    justify-content: start; 
+    margin-bottom: 10px; 
+    margin-left: 0; 
+    margin-right: 0;
+    line-height: 1.2;
+}
+
+.recurso-item i {
+    color: #1e88e5;
+    font-size: 1.2em;
+    margin-right: 10px; /* Adiciona espaçamento entre o ícone e o texto */
+}
+
+
+/*Inicio de carrocel section */
+#carrocel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 30px auto 0 auto; /* Centraliza a seção inteira e adiciona margem superior */
+    padding: 0 30px 30px 30px; /* Mais padding para os elementos internos */
+} 
+
+/* Título da Seção - Centralizado */
+.hero-title-home { 
+    display: flex; 
+    gap: 350px; 
+    border-bottom: solid 1px blue;
+    text-align: center; /* CENTRALIZA o texto */
+    margin: 0; 
+    padding: 0;
+}
+
+.hero-title-home h6 {
+    font-size: 2em; /* Ajuste o tamanho conforme o design */
+    color:  #717171;
+    line-height: 1.3;
+    margin: 0; 
+    padding: 0;
+}
+
+/* NOVO: CSS para a div hero-content-wrapper (usada como um wrapper simples) */
+.hero-content-wrapper {
+    display: block; /* Remove o flex desnecessário */
+    max-width: 100%; 
+    margin: 0 auto; 
+    padding: 0; 
+}
+
+/* Container principal do carrossel - AUMENTADO E CENTRALIZADO */
+.carousel-container {
+    position: relative;
+    border-radius: 8px;
+    display: block;
+    max-width: 800px; /* Largura máxima do carrossel */
+    margin: 0 auto; /* CENTRALIZA o container dentro da seção */
+    margin-bottom: 20px; 
+    min-height: 500px;
+}
+
+/* Wrapper para os ITENS */
+.carousel-slide-wrapper {
+    position: relative;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+
+/* ITEM de SLIDE (Contêiner da imagem + descrição) */
+.carousel-item {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Apenas o item ativo deve ser exibido */
+.carousel-item.active {
+    display: flex; /* Usa flex para empilhar (imagem + descrição) */
+}
+
+/* Estilo da imagem dentro do item - Ajustado para altura fixa */
+.slide-img {
+    width: 100%;
+    max-height: 350px; 
+    height: auto; /* Permite que a altura seja flexível com a largura */
+    object-fit: contain; /* ESSENCIAL: Garante que a imagem caiba no espaço sem ser cortada, adicionando barras se necessário */
+    display: block;
+    border-radius: 15px;
+    margin-bottom: 15px; /* Pequeno espaço entre imagem e descrição */
+}
+
+/* NOVO: Wrapper para colocar a descrição abaixo da imagem e acima dos dots */
+.slide-content-wrapper {
+    position: relative; 
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Descrição da imagem */
+.slide-description {
+    text-align: center;
+    padding: 15px;
+    background-color:#c5e5fa;
+    border-radius: 8px; /* Arredondamento normal */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide-description h3 {
+    margin: 0 0 10px 0;
+    color: #007bff;
+}
+
+.slide-description p {
+    margin: 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+
+/* Pontinhos de Navegação - Posicionamento mantido abaixo da descrição */
+.carousel-dots {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px; 
+    position: relative;
+    bottom: auto;
+    z-index: 10;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* Estilo para as setas (botões) */
+.prev-btn, .next-btn {
+    cursor: pointer;
+    position: absolute;
+    /* Centraliza na metade da altura MÁXIMA da imagem (350px / 2 = 175px) */
+    top: 175px; 
+    transform: translateY(-50%); /* Ajuste fino */
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 15;
+}
+
+.next-btn {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev-btn {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*Fim de carrocel section */
+
+/* ------------------------------------------- */
+/* CORES DE TAGS CUSTOMIZADAS */
+/* ------------------------------------------- */
+
+/* Front-end / UI */
+.tag.frontend, .tag.react, .tag.dataanalytics { 
+    background-color: #d1ecf1; 
+    color: #0c5460; 
+}
+
+.tag.html { 
+    background-color: #e2e3e5; 
+    color: #383d41; 
+}
+
+.tag.css { 
+    background-color: #d6e9f1; 
+    color: #004085; 
+}
+
+.tag.javascript { 
+    background-color: #fff3cd; 
+    color: #856404; 
+}
+
+/* Back-end / Servidor / Linguagens */
+.tag.backend { 
+    background-color: #f8d7da; 
+    color: #721c24; 
+}
+
+.tag.python { 
+    background-color: #ffedcc; 
+    color: #856404; 
+}
+
+.tag.java, .tag.springboot { 
+    background-color: #cce5ff; 
+    color: #004085; 
+}
+
+/* Automação / Integração / Dados */
+.tag.autocao { 
+    /* Força a margem esquerda para garantir o espaçamento de 10px */
+    margin-left: 50px !important;
+    background-color: #d4edda; 
+    color: #155724; 
+}
+
+.tag.api { 
+    /* Garante que não haja margin-left negativo */
+    margin-left: 0 !important;
+    
+    /* Força o espaçamento à direita, pois o .tag genérico pode estar sendo ignorado */
+    margin-right: 10px !important;
+    background-color: #fae4e4; 
+    color: #7f0000; 
+}
+
+.tag.webscraping { 
+    background-color: #e6ffed; 
+    color: #006400; 
+}
+
+/* Business Intelligence / Dados */
+.tag.powerbi, .tag.ux { 
+    background-color: #f0e6fa; 
+    color: #4b0082; 
+}
+
+.tag.businessintelligence, .tag.bi { 
+    background-color: #e0e6e9; 
+    color: #555; 
+}
+
+/* ------------------------------------------- */
+/* FIM DAS TAGS                                */
+/* ------------------------------------------- */
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+
+    /* 1. Ajuste no Container Principal */
+    main {
+        padding: 0 10px 40px 10px; /* Reduz o padding lateral do main para garantir margem segura */
+    }
+
+    /* 2. Correção da div .projeto (o container branco) */
+    .projeto {
+        padding: 20px 10px; /* Reduz o padding interno do box branco */
+    }
+
+    /* 3. Correção da div CABECALHO */
+    .cabecalho {
+        /* Remove margem fixa que causa overflow */
+        margin-left: 0; 
+        /* Centraliza o título */
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .cabecalho h1 {
+        font-size: 1.8em; /* Reduz o tamanho do título para caber */
+    }
+
+    /* 4. Correção da div TECNOLOGIAS */
+    .tecnologias {
+        /* Remove largura e margem fixas que causam overflow */
+        width: auto; 
+        margin-left: 0;
+        
+        /* SOLUÇÃO ESSENCIAL: Permite quebra de linha para as tags */
+        flex-wrap: wrap; 
+        
+        /* Ajusta o alinhamento das tags */
+        justify-content: center;
+        
+        padding: 0 10px; /* Padding de segurança para não colar nas bordas */
+        gap: 8px; /* Adiciona um pequeno espaçamento entre as tags */
+    }
+    
+    /* Remove as margens fixas das tags customizadas para evitar conflitos */
+    .tag.autocao, .tag.api { 
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* 5. Ajuste na seção de descrição e sidebar */
+    .projeto-info {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    /* Reduz o padding para a descrição para caber melhor */
+    .descricao {
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Ajusta a sidebar para o mobile */
+    .sidebar {
+        margin-top: 10px;
+        height: auto;
+    }
+
+    .carrossel-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ------------------------------------------- */
+/* NOVO: Media Query para telas maiores (Desktop/Tablet) */
+@media (min-width: 768px) {
+    /* GARANTE que o wrapper force a linha */
+    .hero-content-wrapper {
+        flex-direction: row; 
+        align-items: center; 
+        padding: 60px 30px;
+        /* Adiciona justfy-content para distribuir o espaço entre eles */
+        justify-content: space-between; 
+    }
+
+    /* Ajuste de Largura para o Título (40%) */
+    .hero-title-home { 
+        flex: 0 0 40%;
+        flex-shrink: 0; 
+        
+        /* MUDANÇA CRUCIAL: Substituindo margin-top por align-self */
+        /* Isso permite que este item seja alinhado individualmente, 
+           anulando o 'align-items: center' do pai. */
+        align-self: flex-start; /* <--- Move o texto para o topo */
+        
+        /* Você pode usar margin-top para um pequeno ajuste fino, 
+           mas ele é menos poderoso que o align-self */
+        margin-top: -30px; /* <--- Pequeno ajuste adicional, se precisar */
+
+        margin-bottom: 0; 
+    }
+
+    /* Ajuste de Largura para o Carrossel (60%) */
+    .carousel-container {
+        /* Garante que o item ocupe no máximo 60% (basis) */
+        flex: 0 0 60%;
+        max-width: none; 
+        margin: 0; /* Remove a centralização */
+        margin-top: 50px; /*Desce o carrocel 50px no desktop */
+    }
+}
+/* ------------------------------------------- */
